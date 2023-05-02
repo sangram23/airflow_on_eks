@@ -1,0 +1,18 @@
+curl -s https://fluxcd.io/install.sh | sudo bash
+export GITLAB_TOKEN=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
+
+
+flux bootstrap github \
+  --owner=sangram53\
+  --repository=airflow_on_eks \
+  --branch=main \
+  --interval=5s \
+  --personal
+
+  flux bootstrap github \
+  --hostname=my-github-enterprise.com \
+  --ssh-hostname=my-github-enterprise.com \
+  --owner=my-github-organization \
+  --repository=my-repository \
+  --branch=main \
+  --path=clusters/my-cluster
